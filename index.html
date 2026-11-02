@@ -1,321 +1,162 @@
 <!DOCTYPE html>
-
 <html lang="es">
 
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <meta name="theme-color" content="#11100f">
-
 <meta name="description" content="N + N · Una edición muy especial. Preboda 13 de agosto de 2027.">
-
-<title>N + N | Edición especial</title>
-
-
+<title>N + N | Edición especial 1906</title>
 
 <style>
-
 :root {
-
    --black: #11100f;
-
    --black2: #1b1917;
-
    --red: #c71920;
-
    --red2: #94151a;
-
    --gold: #b99a61;
-
    --gold-light: #e0c78f;
-
    --ivory: #f5f0e7;
-
    --ink: #211e1a;
-
    --muted: #756f66;
-
    --line: #ded6c9;
-
    --serif: Georgia, "Times New Roman", serif;
-
    --sans: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
-
 }
-
-
 
 * {
-
    box-sizing: border-box;
-
    margin: 0;
-
    padding: 0;
-
 }
-
-
 
 html {
-
    scroll-behavior: smooth;
-
 }
-
-
 
 body {
-
    min-height: 100vh;
-
    background:
-
      radial-gradient(ellipse at 50% -10%, rgba(167,25,30,.2), transparent 48%),
-
      radial-gradient(ellipse at 100% 100%, rgba(185,154,97,.08), transparent 38%),
-
      var(--black);
-
    color: #f8f4ed;
-
    font-family: var(--sans);
-
    line-height: 1.6;
-
    display: flex;
-
    justify-content: center;
-
    overflow-x: hidden;
-
 }
-
-
 
 body::before {
-
    content: "";
-
    position: fixed;
-
    inset: 0;
-
    pointer-events: none;
-
    opacity: .13;
-
    z-index: 0;
-
    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www\.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.22'/%3E%3C/svg%3E");
-
 }
-
-
 
 button, input, select, textarea {
-
    font: inherit;
-
 }
-
-
 
 .container {
-
    width: 100%;
-
    max-width: 490px;
-
    min-height: 100vh;
-
    padding: 22px 17px 28px;
-
    position: relative;
-
    z-index: 1;
-
 }
-
-
 
 .screen {
-
    width: 100%;
-
    min-height: calc(100vh - 50px);
-
    display: flex;
-
    flex-direction: column;
-
    align-items: center;
-
    justify-content: space-between;
-
 }
-
-
 
 .hidden {
-
    display: none !important;
-
 }
 
-
-
 /* =====================================================
-
     PORTADA
-
     ===================================================== */
-
-
 
 .brand-kicker {
-
    display: flex;
-
    align-items: center;
-
    gap: 12px;
-
    margin: 8px 0 0;
-
    color: var(--gold-light);
-
    font: 700 .72rem var(--sans);
-
    letter-spacing: 4px;
-
    text-transform: uppercase;
-
 }
-
-
 
 .brand-kicker::before,
-
 .brand-kicker::after {
-
    content: "";
-
    width: 30px;
-
    height: 1px;
-
    background: linear-gradient(90deg, transparent, var(--gold));
-
 }
-
-
 
 .brand-kicker::after {
-
    transform: scaleX(-1);
-
 }
-
-
 
 .brand-star {
-
    color: var(--red);
-
    font-size: .8rem;
-
 }
-
-
 
 /* =====================================================
-
     ESCENA Y BOTELLA
-
     ===================================================== */
 
-
-
 .scene {
-
    width: 100%;
-
    height: 340px;
-
    position: relative;
-
    perspective: 1100px;
-
    perspective-origin: 50% 45%;
-
    margin: 5px 0 0;
-
-   isolation: isolate;
-
-   overflow: hidden;
-
+   overflow: visible;
 }
-
-
 
 .scene::after {
-
    content: "";
-
    position: absolute;
-
    bottom: 22px;
-
    left: 50%;
-
    width: 190px;
-
    height: 30px;
-
    transform: translateX(-50%);
-
    background: radial-gradient(ellipse, rgba(0,0,0,.9), transparent 70%);
-
    filter: blur(7px);
-
    z-index: 0;
-
 }
-
-
 
 .bottle {
-  transition: opacity .7s ease, filter .7s ease;
-
+   transition: opacity .7s ease, filter .7s ease;
    position: absolute;
-
    width: 112px;
-
    height: 282px;
-
    left: 50%;
-
    bottom: 28px;
-
    transform: translateX(-50%);
-
    z-index: 2;
-
    filter:
-
      drop-shadow(0 14px 13px rgba(0,0,0,.58))
-
      drop-shadow(0 0 8px rgba(145,65,15,.12));
-
    animation: bottleIn .9s cubic-bezier(.2,.8,.2,1) both;
-
 }
-
-
 
 .bottle.bottle-fade {
    opacity: 0;
@@ -324,72 +165,38 @@ button, input, select, textarea {
 }
 
 .bottle svg {
-
    width: 100%;
-
    height: 100%;
-
    overflow: visible;
-
 }
-
-
 
 @keyframes bottleIn {
-
    0% {
-
      opacity: 0;
-
      transform: translate(-50%,24px) scale(.94);
-
    }
-
    100% {
-
      opacity: 1;
-
      transform: translate(-50%,0) scale(1);
-
    }
-
 }
-
-
 
 /* =====================================================
-
     ABRIDOR
-
     ===================================================== */
 
-
-
 .opener {
-
    position: absolute;
-
-   z-index: 8;
-
+   z-index: 50;
    width: 138px;
-
    height: 92px;
-
    left: calc(50% - 69px);
-
    top: 0px;
-
    opacity: 0;
-
    filter: drop-shadow(0 7px 5px #000b);
-
    transform-origin: 50% 12%;
-
    animation: openBottle 1.35s cubic-bezier(.22,.75,.25,1) .82s forwards;
-
 }
-
-
 
 @keyframes openBottle {
    0% {
@@ -398,15 +205,15 @@ button, input, select, textarea {
    }
    18% {
      opacity: 1;
-     transform: translate(0,-7px) rotate(-5deg) scale(1);
+     transform: translate(0,-16px) rotate(-5deg) scale(1);
    }
    38% {
      opacity: 1;
-     transform: translate(0,5px) rotate(7deg) scale(1);
+     transform: translate(0,2px) rotate(7deg) scale(1);
    }
    55% {
      opacity: 1;
-     transform: translate(0,-1px) rotate(-2deg) scale(1.015);
+     transform: translate(0,-4px) rotate(-2deg) scale(1.015);
    }
    72% {
      opacity: 1;
@@ -418,1409 +225,714 @@ button, input, select, textarea {
    }
 }
 
-
-
 /* =====================================================
-
-    CHAPA HORIZONTAL
-
+    CHAPA FOTOGRÁFICA (ESTÁTICA Y VOLADORA)
     ===================================================== */
 
+/* Chapa estática ajustada en ancho al cuello de la botella */
+#static-cap {
+   position: absolute;
+   width: 62px;
+   height: 22px;
+   left: 50%;
+   top: 15px;
+   transform: translateX(-50%);
+   z-index: 4;
+   filter: drop-shadow(0 2px 2px rgba(0,0,0,0.85));
+}
 
+#static-cap img {
+   width: 100%;
+   height: 100%;
+   object-fit: fill;
+   display: block;
+}
 
 .cap-flight {
-
    position: absolute;
-
-   width: 52px;
-
-   height: 52px;
-
+   width: 70px;
+   height: 70px;
    left: 50%;
-
-   top: 0;
-
-   z-index: 10;
-  opacity: 1;
-  visibility: visible;
-
-
-
-   /*
-
-     La chapa comienza casi horizontal.
-
-     rotateX(78deg) permite ver ligeramente su cara
-
-     superior desde la perspectiva frontal de la escena.
-
-   */
-
-   transform:
-
-     translate(-50%,0)
-
-     rotateX(68deg)
-
-     rotateZ(0deg);
-
-
-
+   top: 22px;
+   z-index: 100;
+   opacity: 0;
+   visibility: hidden;
    transform-style: preserve-3d;
-
    transform-origin: center;
-
    backface-visibility: visible;
-
-
-
    filter:
-
-     drop-shadow(0 2px 1px rgba(255,238,195,.28))
-
-     drop-shadow(0 5px 3px rgba(0,0,0,.52))
-
-     drop-shadow(0 13px 9px rgba(0,0,0,.42));
-
-
-
+     drop-shadow(0 6px 5px rgba(255,245,220,.45))
+     drop-shadow(0 12px 10px rgba(0,0,0,.85));
    will-change: transform;
-
+   transform: translateX(-50%);
 }
 
-
-
-.cap-flight svg {
-
+.cap-flight img {
    width: 100%;
-
    height: 100%;
-
+   object-fit: contain;
    display: block;
-
-   overflow: visible;
-
+   border-radius: 50%;
 }
-
-
 
 /* =====================================================
-
     GAS
-
     ===================================================== */
-
-
 
 .co2 {
-
    position: absolute;
-
    top: 45px;
-
    left: 50%;
-
    width: 90px;
-
    height: 90px;
-
    border-radius: 50%;
-
    background:
-
      radial-gradient(circle,
-
        rgba(255,255,255,.45),
-
        rgba(255,255,255,.08) 45%,
-
        transparent 72%);
-
    filter: blur(8px);
-
    opacity: 0;
-
    z-index: 3;
-
    animation: mist .95s ease-out 1.65s;
-
 }
-
-
 
 .co2.two {
-
    width: 65px;
-
    height: 65px;
-
    left: 42%;
-
    animation-delay: 1.8s;
-
 }
-
-
 
 @keyframes mist {
-
    0% {
-
      opacity: 0;
-
      transform: translate(-50%,10px) scale(.4);
-
    }
-
    25% {
-
      opacity: .6;
-
    }
-
    100% {
-
      opacity: 0;
-
      transform: translate(-50%,-85px) scale(1.8);
-
    }
-
 }
 
-
-
 /* =====================================================
-
     TEXTO DE PORTADA
-
     ===================================================== */
-
-
 
 .intro-copy {
-
    text-align: center;
-
    max-width: 390px;
-
    margin: 0 auto 19px;
-
    opacity: 0;
-
    transform: translateY(16px);
-
    animation: fadeUp .8s ease 4.7s forwards;
-
 }
-
-
 
 .intro-copy .eyebrow {
-
    font-size: .68rem;
-
    letter-spacing: 3px;
-
    text-transform: uppercase;
-
    color: var(--gold);
-
    font-weight: 700;
-
    margin-bottom: 8px;
-
 }
-
-
 
 .intro-copy h1 {
-
    font: normal clamp(2.5rem,10vw,3.35rem)/1.05 var(--serif);
-
    color: var(--ivory);
-
    margin-bottom: 13px;
-
 }
-
-
 
 .intro-copy p {
-
    font-size: .96rem;
-
    color: #e4ded4;
-
    font-weight: 300;
-
    margin: 5px 0;
-
 }
-
-
 
 .intro-copy p:last-child {
-
    color: var(--gold-light);
-
    font-style: italic;
-
 }
-
-
 
 @keyframes fadeUp {
-
    to {
-
      opacity: 1;
-
      transform: translateY(0);
-
    }
-
 }
 
-
-
 /* =====================================================
-
     BOTONES Y PIE
-
     ===================================================== */
-
-
 
 .btn {
-
    display: inline-block;
-
    width: 100%;
-
    border: 1px solid #e0c78f;
-
    background: linear-gradient(135deg,#c91c23,#99151b);
-
    color: #fff8ee;
-
    padding: 16px 22px;
-
    border-radius: 3px;
-
    font: 700 .88rem var(--sans);
-
    letter-spacing: 1.6px;
-
    text-transform: uppercase;
-
    text-align: center;
-
    cursor: pointer;
-
    box-shadow: 0 8px 22px #0005, inset 0 1px #ffffff35;
-
    transition: transform .2s, filter .2s, opacity .2s;
-
 }
-
-
 
 .btn:hover,
-
 .btn:focus-visible {
-
    filter: brightness(1.12);
-
    transform: translateY(-2px);
-
    outline: 2px solid var(--gold-light);
-
    outline-offset: 3px;
-
 }
-
-
 
 .btn:disabled {
-
    opacity: .65;
-
    cursor: wait;
-
    transform: none;
-
 }
-
-
 
 .discover-btn {
-
    opacity: 0;
-
    animation: fadeUp .8s ease 4.7s forwards;
-
 }
-
-
 
 .footer {
-
    font: normal .68rem var(--serif);
-
    letter-spacing: 2.2px;
-
    text-transform: uppercase;
-
    color: #8f877b;
-
    margin: 19px 0 3px;
-
    text-align: center;
-
 }
-
-
 
 .footer span {
-
    color: var(--red);
-
    padding: 0 5px;
-
 }
 
-
-
 /* =====================================================
-
     SEGUNDA PANTALLA
-
     ===================================================== */
-
-
 
 #screen-2 {
-
    justify-content: flex-start;
-
    padding-top: 4px;
-
    animation: pageIn .65s ease both;
-
 }
-
-
 
 @keyframes pageIn {
-
    from {
-
      opacity: 0;
-
      transform: translateY(15px);
-
    }
-
    to {
-
      opacity: 1;
-
      transform: translateY(0);
-
    }
-
 }
-
-
 
 .card {
-
    width: 100%;
-
    background: var(--ivory);
-
    color: var(--ink);
-
    border: 1px solid rgba(185,154,97,.45);
-
    border-radius: 3px;
-
    padding: 23px 21px;
-
    margin-bottom: 16px;
-
    box-shadow: 0 14px 35px #0004;
-
    position: relative;
-
 }
-
-
 
 .card::before {
-
    content: "";
-
    position: absolute;
-
    inset: 6px;
-
    border: 1px solid rgba(185,154,97,.22);
-
    pointer-events: none;
-
 }
-
-
 
 .event-header {
-
    text-align: center;
-
    padding: 27px 24px 24px;
-
 }
-
-
 
 .event-mark {
-
    font: 700 .68rem var(--sans);
-
    letter-spacing: 3px;
-
    color: var(--red);
-
    text-transform: uppercase;
-
    margin-bottom: 12px;
-
 }
-
-
 
 .event-mark::before {
-
    content: "✦";
-
    display: block;
-
    color: var(--gold);
-
    font-size: 1.15rem;
-
    margin-bottom: 5px;
-
 }
-
-
 
 .event-title {
-
    font: normal 2rem/1.15 var(--serif);
-
    margin-bottom: 12px;
-
    color: #201c18;
-
 }
-
-
 
 .event-intro {
-
    font-size: .91rem;
-
    color: #625b52;
-
    line-height: 1.65;
-
 }
-
-
 
 .info-grid {
-
    display: grid;
-
    grid-template-columns: 1fr 1fr;
-
    gap: 10px;
-
 }
-
-
 
 .info-box {
-
    background: #eee8de;
-
    border: 1px solid #ded5c7;
-
    padding: 13px 10px;
-
    text-align: center;
-
    min-height: 88px;
-
    display: flex;
-
    flex-direction: column;
-
    justify-content: center;
-
 }
-
-
 
 .info-box.full {
-
    grid-column: span 2;
-
 }
-
-
 
 .info-label {
-
    font-size: .62rem;
-
    letter-spacing: 2px;
-
    color: #8b2022;
-
    font-weight: 800;
-
    margin-bottom: 4px;
-
 }
-
-
 
 .info-value {
-
    font: 700 1.08rem var(--serif);
-
    color: #211e1a;
-
 }
-
-
 
 .info-pending {
-
    font-size: .78rem;
-
    color: #82796e;
-
    font-style: italic;
-
 }
 
-
-
 /* =====================================================
-
     FORMULARIO
-
     ===================================================== */
-
-
 
 .form-title {
-
    font: normal 1.75rem var(--serif);
-
    margin-bottom: 5px;
-
    color: #211e1a;
-
 }
-
-
 
 .form-intro {
-
    font-size: .86rem;
-
    color: #6b6359;
-
    margin-bottom: 19px;
-
 }
-
-
 
 .form-group {
-
    margin-bottom: 17px;
-
 }
-
-
 
 .form-label {
-
    display: block;
-
    font-size: .82rem;
-
    font-weight: 700;
-
    color: #302b25;
-
    margin-bottom: 7px;
-
 }
-
-
 
 .control {
-
    width: 100%;
-
    border: 1px solid #d3cabc;
-
    background: #fffdfa;
-
    border-radius: 2px;
-
    padding: 12px 13px;
-
    font: .92rem var(--sans);
-
    color: #28231e;
-
    transition: border .2s, box-shadow .2s;
-
 }
-
-
 
 .control:focus {
-
    outline: none;
-
    border-color: var(--red);
-
    box-shadow: 0 0 0 3px #c7192018;
-
 }
-
-
 
 textarea.control {
-
    min-height: 82px;
-
    resize: vertical;
-
 }
-
-
 
 select.control {
-
    appearance: none;
-
    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www\.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%23756f66' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
-
    background-repeat: no-repeat;
-
    background-position: right 12px center;
-
 }
-
-
 
 .radio-group {
-
    display: flex;
-
    gap: 10px;
-
 }
-
-
 
 .radio-card {
-
    flex: 1;
-
    position: relative;
-
 }
-
-
 
 .radio-card input {
-
    position: absolute;
-
    opacity: 0;
-
    width: 1px;
-
    height: 1px;
-
 }
-
-
 
 .radio-label {
-
    display: block;
-
    padding: 12px 8px;
-
    text-align: center;
-
    border: 1px solid #d3cabc;
-
    background: #fffdfa;
-
    border-radius: 2px;
-
    font-size: .82rem;
-
    font-weight: 700;
-
    color: #625b52;
-
    cursor: pointer;
-
    transition: all .2s;
-
 }
-
-
 
 .radio-card input:checked + .radio-label {
-
    border-color: var(--red);
-
    color: var(--red);
-
    background: #c719200b;
-
 }
-
-
 
 .radio-card input:focus-visible + .radio-label {
-
    outline: 2px solid var(--red);
-
    outline-offset: 2px;
-
 }
-
-
 
 .status {
-
    display: none;
-
    padding: 11px;
-
    margin-top: 12px;
-
    border-radius: 2px;
-
    font-size: .82rem;
-
    text-align: center;
-
 }
-
-
 
 .status.error {
-
    display: block;
-
    background: #f8e1e1;
-
    color: #861b20;
-
    border: 1px solid #e9b8b9;
-
 }
-
-
 
 .status.info {
-
    display: block;
-
    background: #e8eef0;
-
    color: #344c54;
-
    border: 1px solid #c5d5da;
-
 }
-
-
 
 .success {
-
    text-align: center;
-
    padding: 30px 22px;
-
 }
-
-
 
 .success-mark {
-
    width: 65px;
-
    height: 65px;
-
    border: 1px solid var(--gold);
-
    border-radius: 50%;
-
    display: grid;
-
    place-items: center;
-
    margin: 0 auto 17px;
-
    color: var(--red);
-
    font-size: 2rem;
-
 }
-
-
 
 .success .event-intro {
-
    margin-top: 8px;
-
 }
-
-
 
 /* =====================================================
-
     RESPONSIVE
-
     ===================================================== */
 
-
-
 @media (max-width: 380px) {
-
    .container {
-
      padding-left: 13px;
-
      padding-right: 13px;
-
    }
-
-
 
    .card {
-
      padding: 20px 16px;
-
    }
-
-
 
    .event-title {
-
      font-size: 1.75rem;
-
    }
-
-
 
    .radio-label {
-
      font-size: .75rem;
-
    }
-
 }
-
-
 
 @media (max-height: 720px) {
-
    .scene {
-
      height: 290px;
-
    }
-
-
 
    .bottle {
-  transition: opacity .7s ease, filter .7s ease;
-
+     transition: opacity .7s ease, filter .7s ease;
      height: 245px;
-
    }
-
-
 
    .intro-copy h1 {
-
      font-size: 2.4rem;
-
    }
-
 }
-
-
 
 @media (prefers-reduced-motion: reduce) {
-
    *,
-
    *::before,
-
    *::after {
-
      animation-duration: .01ms !important;
-
      animation-iteration-count: 1 !important;
-
      scroll-behavior: auto !important;
-
    }
-
-
 
    .cap-flight {
-
      transition: none !important;
-
    }
-
 }
-
 </style>
-
 </head>
 
-
-
 <body>
-
 <main class="container">
-
-
 
    <!-- PANTALLA 1 -->
 
-
-
    <section id="screen-1" class="screen">
 
-
-
      <div class="brand-kicker">
-
        <span class="brand-star">✦</span>
-
        N + N · PREBODA
-
        <span class="brand-star">✦</span>
-
      </div>
 
-
-
      <div class="scene" id="scene"
+       aria-label="Una botella de cerveza cerrada y un abridor retirando la chapa">
 
-       aria-label="Una botella de cerveza se abre y su chapa sale despedida">
-
-
-
-       <!-- BOTELLA ÁMBAR -->
-
-
+       <!-- BOTELLA CERRADA -->
 
        <div class="bottle" id="bottle">
-
          <svg viewBox="0 0 120 300" role="img"
-
            aria-label="Botella de cerveza edición N más N">
 
-
-
            <defs>
-
              <linearGradient id="glass" x1="0" y1="0" x2="1" y2="0">
-
                <stop offset="0" stop-color="#321306"/>
-
                <stop offset=".14" stop-color="#71300d"/>
-
                <stop offset=".35" stop-color="#bd641b"/>
-
                <stop offset=".52" stop-color="#e18a32"/>
-
                <stop offset=".72" stop-color="#9b4814"/>
-
                <stop offset=".9" stop-color="#55230b"/>
-
                <stop offset="1" stop-color="#260e05"/>
-
              </linearGradient>
-
-
 
              <linearGradient id="glassLight" x1="0" y1="0" x2="1" y2="0">
-
                <stop offset="0" stop-color="#fff0c8" stop-opacity=".04"/>
-
                <stop offset=".22" stop-color="#ffd18b" stop-opacity=".42"/>
-
                <stop offset=".4" stop-color="#fff4d7" stop-opacity=".08"/>
-
                <stop offset=".75" stop-color="#3a1405" stop-opacity=".12"/>
-
                <stop offset="1" stop-color="#fff0c8" stop-opacity=".12"/>
-
              </linearGradient>
-
-
 
              <linearGradient id="neckGlass" x1="0" y1="0" x2="1" y2="0">
-
                <stop offset="0" stop-color="#401706"/>
-
                <stop offset=".28" stop-color="#b65c19"/>
-
                <stop offset=".52" stop-color="#e28a37"/>
-
                <stop offset=".76" stop-color="#8c3d0e"/>
-
                <stop offset="1" stop-color="#351104"/>
-
              </linearGradient>
-
-
 
              <linearGradient id="label" x1="0" y1="0" x2="0" y2="1">
-
                <stop offset="0" stop-color="#25201d"/>
-
                <stop offset=".55" stop-color="#11100f"/>
-
                <stop offset="1" stop-color="#861b20"/>
-
              </linearGradient>
-
-
 
              <linearGradient id="goldLabel" x1="0" y1="0" x2="1" y2="1">
-
                <stop offset="0" stop-color="#f5dfad"/>
-
                <stop offset=".5" stop-color="#b99a61"/>
-
                <stop offset="1" stop-color="#f4dca6"/>
-
              </linearGradient>
-
            </defs>
 
-
-
-           <!-- Silueta -->
-
+           <!-- Silueta de la botella -->
            <path
-
              d="M42 12 L78 12 L78 74
-
                 Q78 86 88 98
-
                 Q102 112 103 135
-
                 L103 268
-
                 Q103 286 86 289
-
                 L34 289
-
                 Q17 286 17 268
-
                 L17 135
-
                 Q18 112 32 98
-
                 Q42 86 42 74 Z"
-
              fill="url(#glass)"
-
              stroke="#260e05"
-
              stroke-width="2"/>
-
-
 
            <!-- Cuello -->
-
            <path
-
              d="M42 12 L78 12 L78 74
-
                 Q78 86 88 98
-
                 L32 98
-
                 Q42 86 42 74 Z"
-
              fill="url(#neckGlass)"
-
              opacity=".9"/>
 
-
-
            <path d="M42 14 L78 14"
-
              stroke="#f3b76b" stroke-opacity=".5" stroke-width="1.2"/>
 
-
-
            <path d="M42 20 L78 20"
-
              stroke="#2b1005" stroke-opacity=".5" stroke-width="1.5"/>
 
-
-
            <!-- Reflejos -->
-
            <path
-
              d="M45 17 L48 17 L48 76
-
                 Q48 91 37 106
-
                 Q28 119 28 143
-
                 L28 258"
-
              fill="none"
-
              stroke="#ffdba0"
-
              stroke-opacity=".43"
-
              stroke-width="3.2"
-
              stroke-linecap="round"/>
 
-
-
            <path
-
              d="M52 104 Q43 117 43 145 L43 252"
-
              fill="none"
-
              stroke="#fff0d0"
-
              stroke-opacity=".12"
-
              stroke-width="1.5"/>
-
-
 
            <path d="M94 137 L94 263"
-
              fill="none"
-
              stroke="#160801"
-
              stroke-opacity=".48"
-
              stroke-width="4"/>
 
-
-
            <path d="M20 143 L20 264"
-
              fill="none"
-
              stroke="#2c0e03"
-
              stroke-opacity=".35"
-
              stroke-width="2"/>
-
-
 
            <!-- Brillo del cristal -->
-
            <path
-
              d="M18 145 Q60 151 102 145 L102 268
-
                 Q102 286 86 289 L34 289
-
                 Q17 286 17 268 Z"
-
              fill="url(#glassLight)"
-
              opacity=".7"/>
 
-
-
            <!-- Base -->
-
            <path
-
              d="M19 267 Q60 280 101 267
-
                 L101 273 Q60 287 19 273 Z"
-
              fill="#351306"
-
              opacity=".65"/>
 
-
-
            <path d="M22 272 Q60 282 98 272"
-
              fill="none"
-
              stroke="#f5bd73"
-
              stroke-opacity=".28"
-
              stroke-width="2"/>
 
-
-
            <!-- Etiqueta -->
-
            <path
-
              d="M18 151 Q60 145 102 151
-
                 L102 229 Q60 235 18 229 Z"
-
              fill="url(#label)"
-
              stroke="url(#goldLabel)"
-
              stroke-width="1.5"/>
 
-
-
            <path d="M22 157 Q60 151 98 157"
-
              fill="none" stroke="#d5b77d" stroke-width="1"/>
-
-
 
            <path d="M22 223 Q60 230 98 223"
-
              fill="none" stroke="#d5b77d" stroke-width="1"/>
 
-
-
            <!-- Estrella -->
-
            <path
-
              d="M60 164 L63 170 L70 171
-
                 L65 176 L66 183 L60 179
-
                 L54 183 L55 176 L50 171
-
                 L57 170 Z"
-
              fill="#c71920"
-
              stroke="#e0c78f"
-
              stroke-width=".6"/>
 
-
-
            <text x="60" y="194"
-
              text-anchor="middle"
-
              font-family="Georgia,serif"
-
              font-size="19"
-
              font-weight="bold"
-
              fill="#f5f0e7">N + N</text>
 
-
-
            <text x="60" y="207"
-
              text-anchor="middle"
-
              font-family="Arial,sans-serif"
-
              font-size="5.8"
-
              letter-spacing="1.5"
-
              fill="#e0c78f">EDICIÓN ESPECIAL</text>
 
-
-
            <text x="60" y="217"
-
              text-anchor="middle"
-
              font-family="Arial,sans-serif"
-
              font-size="5"
-
              letter-spacing="1"
-
              fill="#f5f0e7">PREBODA · 2027</text>
-
-
-
-           <path d="M22 160 Q27 159 30 159"
-
-             fill="none"
-
-             stroke="#fff"
-
-             stroke-opacity=".2"
-
-             stroke-width="1"/>
-
          </svg>
-
        </div>
 
-
+       <!-- CHAPA ESTÁTICA EN HORIZONTAL SOBRE LA BOTELLA (Ancha) -->
+       <div id="static-cap">
+         <img src="chapa-1906.png" alt="Chapa 1906 N+N">
+       </div>
 
        <div class="co2"></div>
-
        <div class="co2 two"></div>
-
-
 
        <!-- ABRIDOR -->
 
-
-
        <div class="opener">
-
          <svg viewBox="0 0 160 108" width="100%" height="100%" aria-hidden="true">
            <defs>
              <linearGradient id="openerMetal" x1="0" y1="0" x2="1" y2="1">
@@ -1836,16 +948,11 @@ select.control {
                <stop offset="0" stop-color="#171615"/>
                <stop offset="1" stop-color="#050505"/>
              </linearGradient>
-             <filter id="openerEmboss" x="-30%" y="-30%" width="160%" height="160%">
-               <feGaussianBlur stdDeviation="1.4"/>
-             </filter>
            </defs>
-           <!-- Cabeza robusta de abridor corona -->
            <path d="M24 8 Q14 8 10 20 L3 54 Q0 70 13 78 L34 89 Q47 96 61 89 L143 50 Q157 43 153 28 L149 15 Q146 3 132 3 Z"
              fill="url(#openerMetal)" stroke="#27231e" stroke-width="3"/>
            <path d="M22 19 Q19 17 17 27 L12 52 Q10 61 20 67 L39 78 Q47 83 56 78 L132 43 Q142 38 139 28 L136 19 Q134 13 126 13 Z"
              fill="url(#openerDark)" stroke="#bdb19d" stroke-width="2.2"/>
-           <!-- Ventana de enganche y labio que hace palanca bajo la chapa -->
            <path d="M39 61 Q45 69 56 64 L118 35 Q126 31 123 23 Q119 17 111 21 L51 49 Q42 53 39 61Z"
              fill="#090909" stroke="#e3d7c4" stroke-width="2"/>
            <path d="M42 60 Q48 67 57 62 L113 37" fill="none" stroke="#fff4df" stroke-width="2" opacity=".65"/>
@@ -1854,1216 +961,593 @@ select.control {
            <circle cx="25" cy="24" r="4" fill="#8b8376" stroke="#292621" stroke-width="1.5"/>
            <circle cx="25" cy="24" r="1.3" fill="#eee2ce"/>
          </svg>
-
        </div>
 
-
-
-       <!-- CHAPA METÁLICA -->
-
-
+       <!-- CHAPA VOLADORA (Ancha) -->
 
        <div class="cap-flight" id="cap-flight" aria-hidden="true">
-
-         <svg viewBox="0 0 120 120" role="img" aria-label="Chapa negra y roja personalizada N más N">
-          <defs>
-            <radialGradient id="capBlack" cx="32%" cy="20%" r="78%">
-              <stop offset="0" stop-color="#55514d"/>
-              <stop offset=".22" stop-color="#292725"/>
-              <stop offset=".62" stop-color="#11100f"/>
-              <stop offset="1" stop-color="#030303"/>
-            </radialGradient>
-            <linearGradient id="capSteel" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0" stop-color="#f1eee7"/>
-              <stop offset=".12" stop-color="#77736c"/>
-              <stop offset=".32" stop-color="#242321"/>
-              <stop offset=".7" stop-color="#090909"/>
-              <stop offset=".88" stop-color="#625e56"/>
-              <stop offset="1" stop-color="#e0d9ca"/>
-            </linearGradient>
-            <radialGradient id="capGloss" cx="28%" cy="12%" r="82%">
-              <stop offset="0" stop-color="#fff" stop-opacity=".34"/>
-              <stop offset=".28" stop-color="#fff" stop-opacity=".09"/>
-              <stop offset=".62" stop-color="#fff" stop-opacity="0"/>
-              <stop offset="1" stop-color="#000" stop-opacity=".25"/>
-            </radialGradient>
-            <linearGradient id="capRed" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0" stop-color="#ff6b61"/>
-              <stop offset=".45" stop-color="#e33a32"/>
-              <stop offset="1" stop-color="#a91118"/>
-            </linearGradient>
-            <filter id="capShadow" x="-35%" y="-35%" width="170%" height="180%">
-              <feGaussianBlur stdDeviation="2.5"/>
-            </filter>
-          </defs>
-
-          <!-- Sombra de contacto -->
-          <ellipse cx="60" cy="65" rx="51" ry="48" fill="#000" opacity=".52" filter="url(#capShadow)"/>
-
-          <!-- Faldón metálico ondulado del tapón corona -->
-          <path d="M60 4
-            C65 4 67 10 72 9 C77 8 80 4 84 7 C89 10 88 16 93 18
-            C98 20 104 18 106 23 C109 28 105 33 109 38
-            C113 43 119 45 117 51 C115 57 110 59 114 65
-            C117 71 115 76 109 79 C104 82 106 88 103 93
-            C100 99 94 97 90 102 C86 107 85 114 79 114
-            C73 114 70 109 64 112 C58 115 54 119 49 114
-            C44 110 40 111 35 112 C29 113 27 106 24 102
-            C20 97 14 99 12 93 C10 87 14 82 9 78
-            C4 74 2 69 6 64 C10 59 5 55 3 50
-            C1 44 8 41 10 36 C12 31 7 26 11 21
-            C15 16 21 19 25 14 C29 9 30 4 36 6
-            C42 8 45 11 50 8 C55 5 56 3 60 4 Z"
-            fill="url(#capSteel)" stroke="#d8d3c8" stroke-width="1.2"/>
-
-          <!-- Estrías prensadas individuales alrededor del faldón -->
-          <g fill="none" stroke-linecap="round" opacity=".9">
-            <path d="M60 5 L60 20" stroke="#f4f0e8" stroke-width="1.5" transform="rotate(0 60 57)"/>
-            <path d="M60 5 L60 20" stroke="#090909" stroke-width="1.4" transform="rotate(15 60 57)"/>
-            <path d="M60 5 L60 20" stroke="#d8d2c6" stroke-width="1.4" transform="rotate(30 60 57)"/>
-            <path d="M60 5 L60 20" stroke="#090909" stroke-width="1.4" transform="rotate(45 60 57)"/>
-            <path d="M60 5 L60 20" stroke="#d8d2c6" stroke-width="1.4" transform="rotate(60 60 57)"/>
-            <path d="M60 5 L60 20" stroke="#090909" stroke-width="1.4" transform="rotate(75 60 57)"/>
-            <path d="M60 5 L60 20" stroke="#d8d2c6" stroke-width="1.4" transform="rotate(90 60 57)"/>
-            <path d="M60 5 L60 20" stroke="#090909" stroke-width="1.4" transform="rotate(105 60 57)"/>
-            <path d="M60 5 L60 20" stroke="#d8d2c6" stroke-width="1.4" transform="rotate(120 60 57)"/>
-            <path d="M60 5 L60 20" stroke="#090909" stroke-width="1.4" transform="rotate(135 60 57)"/>
-            <path d="M60 5 L60 20" stroke="#d8d2c6" stroke-width="1.4" transform="rotate(150 60 57)"/>
-            <path d="M60 5 L60 20" stroke="#090909" stroke-width="1.4" transform="rotate(165 60 57)"/>
-            <path d="M60 5 L60 20" stroke="#d8d2c6" stroke-width="1.4" transform="rotate(180 60 57)"/>
-            <path d="M60 5 L60 20" stroke="#090909" stroke-width="1.4" transform="rotate(195 60 57)"/>
-            <path d="M60 5 L60 20" stroke="#d8d2c6" stroke-width="1.4" transform="rotate(210 60 57)"/>
-            <path d="M60 5 L60 20" stroke="#090909" stroke-width="1.4" transform="rotate(225 60 57)"/>
-            <path d="M60 5 L60 20" stroke="#d8d2c6" stroke-width="1.4" transform="rotate(240 60 57)"/>
-            <path d="M60 5 L60 20" stroke="#090909" stroke-width="1.4" transform="rotate(255 60 57)"/>
-            <path d="M60 5 L60 20" stroke="#d8d2c6" stroke-width="1.4" transform="rotate(270 60 57)"/>
-            <path d="M60 5 L60 20" stroke="#090909" stroke-width="1.4" transform="rotate(285 60 57)"/>
-            <path d="M60 5 L60 20" stroke="#d8d2c6" stroke-width="1.4" transform="rotate(300 60 57)"/>
-            <path d="M60 5 L60 20" stroke="#090909" stroke-width="1.4" transform="rotate(315 60 57)"/>
-            <path d="M60 5 L60 20" stroke="#d8d2c6" stroke-width="1.4" transform="rotate(330 60 57)"/>
-            <path d="M60 5 L60 20" stroke="#090909" stroke-width="1.4" transform="rotate(345 60 57)"/>
-          </g>
-
-          <!-- Reborde circular y corona superior lacada -->
-          <circle cx="60" cy="57" r="47" fill="none" stroke="#f4f0e8" stroke-width="1.3" opacity=".82"/>
-          <circle cx="60" cy="57" r="43.5" fill="url(#capBlack)" stroke="#080808" stroke-width="2"/>
-          <circle cx="60" cy="57" r="42" fill="url(#capGloss)"/>
-          <path d="M27 34 C37 18 54 13 70 17" fill="none" stroke="#fff" stroke-width="2.5" opacity=".22" stroke-linecap="round"/>
-          <path d="M20 61 C22 83 38 98 58 100" fill="none" stroke="#fff" stroke-width="1" opacity=".08"/>
-
-          <!-- Gráfica roja inspirada en la tipografía de la chapa 1906 -->
-          <text x="60" y="35" text-anchor="middle" fill="url(#capRed)"
-            font-family="Arial Narrow,Arial,sans-serif" font-size="7.5"
-            font-weight="900" letter-spacing="1.1">EDICIÓN</text>
-          <text x="60" y="66" text-anchor="middle" fill="url(#capRed)"
-            font-family="Arial Black,Impact,sans-serif" font-size="25"
-            font-style="italic" font-weight="900" letter-spacing="-1.5">N + N</text>
-          <text x="60" y="81" text-anchor="middle" fill="url(#capRed)"
-            font-family="Arial Narrow,Arial,sans-serif" font-size="7.2"
-            font-weight="900" letter-spacing=".7">PREBODA 2027</text>
-
-          <!-- Brillo especular del esmalte -->
-          <path d="M31 26 Q43 17 57 17" fill="none" stroke="#fff" stroke-width="1.4" opacity=".25" stroke-linecap="round"/>
-        </svg>
-
+         <img src="chapa-1906.png" alt="Chapa de botella de cerveza real N más N">
        </div>
 
-
-
      </div>
-
-
 
      <div class="intro-copy">
-
        <div class="eyebrow">Una edición muy especial</div>
-
        <h1>¡Enhorabuena!</h1>
-
        <p>Tu chapa es una de las premiadas.</p>
-
        <p>Nos gustaría que nos acompañaras el 13 de agosto de 2027 en nuestra preboda.</p>
-
      </div>
-
-
 
      <button id="btn-discover" class="btn discover-btn" style="margin-bottom:17px">
-
        Descubrir la invitación
-
      </button>
 
-
-
      <div class="footer">
-
        Una pequeña chapa <span>✦</span> Una gran celebración
-
      </div>
-
-
 
    </section>
 
-
-
-
-
    <!-- =================================================
-
         PANTALLA 2: INVITACIÓN
-
-        \================================================= -->
-
-
+        ================================================= -->
 
    <section id="screen-2" class="screen hidden">
 
-
-
      <div class="card event-header">
-
        <div class="event-mark">N + N · Edición especial</div>
-
        <h2 class="event-title">¡Nos vemos antes del gran día!</h2>
-
        <p class="event-intro">
-
          Queremos celebrar el comienzo de un fin de semana muy especial contigo.
-
          Confírmanos si podrás venir y cuéntanos a qué hora te vendría bien llegar.
-
        </p>
-
      </div>
-
-
 
      <div class="card">
-
        <div class="info-grid">
 
-
-
          <div class="info-box">
-
            <div class="info-label">FECHA</div>
-
            <div class="info-value">13/08/2027</div>
-
            <div class="info-pending">Viernes</div>
-
          </div>
-
-
 
          <div class="info-box">
-
            <div class="info-label">HORA</div>
-
-           <div class="info-value">20:00</div>
-
+           <div class="info-value" style="font-size: 0.88rem;">Pendiente de Confirmar</div>
          </div>
 
-
-
          <div class="info-box full">
-
            <div class="info-label">LUGAR</div>
-
-           <div class="info-value">Casal do Crego</div>
-
-           <div class="info-pending">Dirección pendiente</div>
-
+           <div class="info-value" style="font-size: 0.95rem;">Casal do Crego</div>
+           <div class="info-pending" style="font-size: 0.78rem;">Lugar a Lanzada, 6, 36988 O Grove, Pontevedra</div>
          </div>
-
-
 
          <div class="info-box full">
-
            <div class="info-label">INFORMACIÓN ADICIONAL</div>
-
-           <div class="info-pending">Pendiente de confirmar</div>
-
+           <div class="info-pending" style="font-style: normal; color: #302b25; font-size: 0.82rem;">Habrá vino, cerveza, refrescos y un picoteo sencillo para irnos conociendo todos antes de la boda.</div>
          </div>
-
-
 
        </div>
-
      </div>
-
-
 
      <!-- FORMULARIO -->
 
-
-
      <div id="form-card" class="card">
-
        <h3 class="form-title">¿Te apuntas?</h3>
-
        <p class="form-intro">
-
          Rellena estos datos para que podamos organizarnos.
-
          ¡Tenemos muchas ganas de verte!
-
        </p>
-
-
 
        <form id="rsvp-form" novalidate>
 
-
-
          <div class="form-group">
-
            <label class="form-label" for="nombre">
-
              Nombre y apellidos *
-
            </label>
-
            <input
-
              type="text"
-
              id="nombre"
-
              name="nombre"
-
              class="control"
-
              placeholder="Cómo te llamas"
-
              autocomplete="name"
-
              required
-
            >
-
          </div>
 
-
-
          <div class="form-group">
-
            <label class="form-label" for="email">
-
              Correo electrónico (opcional)
-
            </label>
-
            <input
-
              type="email"
-
              id="email"
-
              name="email"
-
              class="control"
-
              placeholder="tu@email.com"
-
              autocomplete="email"
-
            >
-
          </div>
 
-
-
          <div class="form-group">
-
            <span class="form-label" id="attendance-label">
-
              Asistencia *
-
            </span>
 
-
-
            <div class="radio-group" role="radiogroup"
-
              aria-labelledby="attendance-label">
 
-
-
              <div class="radio-card">
-
                <input
-
                  type="radio"
-
                  id="att-yes"
-
                  name="asistencia"
-
                  value="Sí, allí estaré"
-
                  required
-
                >
-
                <label for="att-yes" class="radio-label">
-
                  ¡Sí, allí estaré!
-
                </label>
-
              </div>
-
-
 
              <div class="radio-card">
-
                <input
-
                  type="radio"
-
                  id="att-no"
-
                  name="asistencia"
-
                  value="No podré asistir"
-
                  required
-
                >
-
                <label for="att-no" class="radio-label">
-
                  No podré
-
                </label>
-
              </div>
-
-
 
            </div>
-
          </div>
-
-
 
          <div class="form-group hidden" id="time-group">
-
            <label class="form-label" for="hora_llegada">
-
              ¿A qué hora podrías llegar? *
-
            </label>
-
-
 
            <select id="hora_llegada" name="hora_llegada" class="control">
-
              <option value="" disabled selected>
-
                Selecciona una opción
-
              </option>
-
              <option>Antes de las 18:00</option>
-
              <option>Entre las 18:00 y las 19:00</option>
-
              <option>Entre las 19:00 y las 20:00</option>
-
              <option>Entre las 20:00 y las 21:00</option>
-
              <option>Después de las 21:00</option>
-
              <option>Aún no lo sé</option>
-
            </select>
-
          </div>
 
-
-
          <div class="form-group">
-
            <label class="form-label" for="alergias">
-
              Alergias, intolerancias o necesidades alimentarias (opcional)
-
            </label>
-
            <textarea
-
              id="alergias"
-
              name="alergias"
-
              class="control"
-
              placeholder="Cuéntanos si debemos tener algo en cuenta"
-
            ></textarea>
-
          </div>
-
-
 
          <div class="form-group">
-
            <label class="form-label" for="mensaje">
-
              ¿Quieres dejarnos algún mensaje? (opcional)
-
            </label>
-
            <textarea
-
              id="mensaje"
-
              name="mensaje"
-
              class="control"
-
              placeholder="Aquí puedes escribirnos lo que quieras"
-
            ></textarea>
-
          </div>
-
-
 
          <button type="submit" id="btn-submit" class="btn">
-
            Enviar confirmación
-
          </button>
 
-
-
          <div
-
            id="status-box"
-
            class="status"
-
            role="status"
-
            aria-live="polite"
-
          ></div>
 
-
-
        </form>
-
      </div>
-
-
 
      <!-- MENSAJE DE ÉXITO -->
 
-
-
      <div id="success-card" class="card hidden success">
-
        <div class="success-mark">✓</div>
-
        <h2 class="form-title">¡Gracias por responder!</h2>
-
        <p class="event-intro">
-
          Hemos recibido tu respuesta.
-
          ¡Esperamos celebrar contigo!
-
        </p>
-
      </div>
-
-
 
      <div class="footer">
-
        N + N <span>✦</span> 13 · 08 · 2027
-
      </div>
 
-
-
    </section>
-
 </main>
 
-
-
-
-
 <script>
-
 /* =====================================================
-
     CONFIGURACIÓN
-
     ===================================================== */
 
-
-
 const APPS_SCRIPT_URL =
-
-   "REEMPLAZAR_CON_TU_URL_DE_APPS_SCRIPT";
-
-
-
-
+   "https://script.google.com/macros/s/AKfycbwUboIMGzLtn4CnA-RP8wW3RU1VlELdD57skhzSyARP0BpDSlVxpj_NJe7NkNhA_vxkdw/exec";
 
 document.addEventListener("DOMContentLoaded", () => {
 
-
-
    const $ = id => document.getElementById(id);
 
-
-
    const scene = $("scene");
-
    const bottle = $("bottle");
-
-   const cap = $("cap-flight");
-
-
+   const staticCap = $("static-cap");
+   const capFlight = $("cap-flight");
 
    const screen1 = $("screen-1");
-
    const screen2 = $("screen-2");
-
-
 
    const discoverButton = $("btn-discover");
 
-
-
    const form = $("rsvp-form");
-
    const yes = $("att-yes");
-
    const no = $("att-no");
 
-
-
    const timeGroup = $("time-group");
-
    const timeSelect = $("hora_llegada");
 
-
-
    const submitButton = $("btn-submit");
-
    const statusBox = $("status-box");
 
-
-
    const formCard = $("form-card");
-
    const successCard = $("success-card");
 
-
-
    const reducedMotion = window.matchMedia(
-
      "(prefers-reduced-motion: reduce)"
-
    ).matches;
 
-
-
-
-
-     /* =====================================================
-     APERTURA: CHAPA, VUELO, REBOTES Y PLANO FINAL
-     ===================================================== */
-  let animationStarted = false;
-  let initialDimensions = null;
-
-  function getCapDimensions() {
-    const sceneRect = scene.getBoundingClientRect();
-    const bottleRect = bottle.getBoundingClientRect();
-    const capWidth = cap.offsetWidth;
-    const capHeight = cap.offsetHeight;
-    // Obtener la coordenada exacta de la boca desde el propio SVG.
-    // El borde de la boca está en y=12 dentro del SVG. La chapa se centra
-    // ligeramente por encima (y=4) para que el faldón prensado cubra el labio
-    // de vidrio y se apoye SOBRE la abertura, no a media altura del cuello.
-    const bottleSvg = bottle.querySelector("svg");
-    const mouthPoint = bottleSvg.createSVGPoint();
-    mouthPoint.x = 60;
-    mouthPoint.y = 4;
-    const mouthOnScreen = mouthPoint.matrixTransform(bottleSvg.getScreenCTM());
-    const mouthX = mouthOnScreen.x - sceneRect.left;
-    const mouthY = mouthOnScreen.y - sceneRect.top;
-    return { sceneRect, bottleRect, mouthX, mouthY, capWidth, capHeight };
-  }
-
-  function placeCapAtMouth() {
-    const d = getCapDimensions();
-    cap.style.left = d.mouthX + "px";
-    cap.style.top = (d.mouthY - d.capHeight / 2) + "px";
-    cap.style.width = "52px";
-    cap.style.height = "52px";
-    // Perspectiva de una chapa cerrando la botella: el disco queda casi
-    // horizontal y su faldón alcanza el borde superior del vidrio.
-    cap.style.transformOrigin = "50% 50%";
-    cap.style.transform = "translate(-50%,0) rotateX(78deg) rotateZ(-2deg)";
-    initialDimensions = d;
-    return d;
-  }
-
-  function launchCap() {
-    if (animationStarted) return;
-    animationStarted = true;
-    const d = placeCapAtMouth();
-
-    if (reducedMotion) {
-      bottle.classList.add("bottle-fade");
-      cap.style.width = "142px";
-      cap.style.height = "142px";
-      cap.style.left = "50%";
-      cap.style.top = (scene.clientHeight / 2 - 71) + "px";
-      cap.style.transform = "translate(-50%,0) rotateX(0deg) rotateZ(0deg)";
-      return;
-    }
-
-    // Un lanzamiento corto y ascendente; la gravedad y las colisiones
-    // determinan el resto del movimiento fotograma a fotograma.
-    let x = 0;
-    let y = 0;
-    let vx = 185;
-    let vy = -510;
-    let angle = -4;
-    let angularVelocity = 690;
-    let lastTime = null;
-    let bounces = 0;
-    let bottleHidden = false;
-    const gravity = 1480;
-    const floorY = d.sceneRect.height - 24 - d.capHeight / 2;
-    const leftLimit = 12 + d.capWidth / 2 - d.mouthX;
-    const rightLimit = d.sceneRect.width - 12 - d.capWidth / 2 - d.mouthX;
-    const restitution = [0.48, 0.29, 0.14];
-
-    function finishAndCenter() {
-      bottle.classList.add("bottle-fade");
-      const fromX = d.mouthX + x;
-      const fromY = d.mouthY + y;
-      const targetX = d.sceneRect.width / 2;
-      const targetY = d.sceneRect.height / 2;
-      const startAngle = angle;
-      const startTilt = 20;
-      const startedAt = performance.now();
-      const duration = 760;
-      const startWidth = 52;
-      const finalSize = Math.min(148, d.sceneRect.width * 0.38);
-
-      function settle(now) {
-        const t = Math.min(1, (now - startedAt) / duration);
-        const eased = 1 - Math.pow(1 - t, 3);
-        const px = fromX + (targetX - fromX) * eased;
-        const py = fromY + (targetY - fromY) * eased;
-        const size = startWidth + (finalSize - startWidth) * eased;
-        cap.style.width = size + "px";
-        cap.style.height = size + "px";
-        cap.style.left = px + "px";
-        cap.style.top = (py - size / 2) + "px";
-        cap.style.transform = `translate(-50%,0) rotateX(${startTilt * (1-eased)}deg) rotateZ(${startAngle * (1-eased)}deg)`;
-        if (t < 1) {
-          requestAnimationFrame(settle);
-        } else {
-          cap.style.left = "50%";
-          cap.style.top = (scene.clientHeight / 2 - finalSize / 2) + "px";
-          cap.style.transform = "translate(-50%,0) rotateX(0deg) rotateZ(0deg)";
-        }
-      }
-      requestAnimationFrame(settle);
-    }
-
-    function frame(now) {
-      if (lastTime === null) lastTime = now;
-      const dt = Math.min((now - lastTime) / 1000, 0.025);
-      lastTime = now;
-
-      vy += gravity * dt;
-      x += vx * dt;
-      y += vy * dt;
-      angle += angularVelocity * dt;
-
-      // La botella se desvanece cuando la chapa ya ha abandonado el cuello.
-      if (!bottleHidden && Math.hypot(x, y) > 78) {
-        bottle.classList.add("bottle-fade");
-        bottleHidden = true;
-      }
-
-      if (x < leftLimit) {
-        x = leftLimit;
-        vx = Math.abs(vx) * 0.62;
-        angularVelocity *= 0.78;
-      } else if (x > rightLimit) {
-        x = rightLimit;
-        vx = -Math.abs(vx) * 0.62;
-        angularVelocity *= 0.78;
-      }
-
-      const capCenterY = d.mouthY + y;
-      if (capCenterY >= floorY && vy > 0) {
-        y = floorY - d.mouthY;
-        const impactSpeed = vy;
-        vy = -impactSpeed * (restitution[bounces] ?? 0);
-        vx *= 0.72;
-        angularVelocity *= 0.62;
-        bounces++;
-
-        // El tercer impacto ya no genera un salto artificial: la chapa
-        // rueda/desliza brevemente y pierde energía hasta quedar quieta.
-        if (bounces >= 3 || Math.abs(vy) < 95) {
-          vy = 0;
-          angularVelocity *= 0.55;
-        }
-      }
-
-      // Rozamiento aerodinámico y frenado progresivo sobre la superficie.
-      if (bounces >= 3 && capCenterY >= floorY - 0.5) {
-        y = floorY - d.mouthY;
-        vy = 0;
-        vx *= Math.pow(0.035, dt);
-        angularVelocity *= Math.pow(0.018, dt);
-        if (Math.abs(vx) < 3) vx = 0;
-        if (Math.abs(angularVelocity) < 7) angularVelocity = 0;
-        if (vx === 0 && angularVelocity === 0) {
-          finishAndCenter();
-          return;
-        }
-      }
-
-      const flightProgress = Math.min(1, Math.abs(y) / 150);
-      const tilt = 68 - 48 * flightProgress + Math.min(12, Math.abs(angularVelocity) * 0.008);
-      cap.style.transform = `translate(-50%,0) translate3d(${x}px,${y}px,0) rotateX(${tilt}deg) rotateZ(${angle}deg)`;
-      requestAnimationFrame(frame);
-    }
-
-    requestAnimationFrame(frame);
-  }
-
-  placeCapAtMouth();
-  requestAnimationFrame(placeCapAtMouth);
-  window.addEventListener("resize", () => {
-    if (!animationStarted) placeCapAtMouth();
-  });
-  if (!reducedMotion) window.setTimeout(launchCap, 1320);
-  else launchCap();
-
-/* =====================================================
-
-      CAMBIO DE PANTALLA
-
+   /* =====================================================
+      ANIMACIÓN DE APERTURA: BOTELLA CERRADA QUE SE ABRE
       ===================================================== */
+   let animationStarted = false;
 
+   function launchCapReal() {
+     if (animationStarted) return;
+     animationStarted = true;
+     
+     if (reducedMotion) {
+       staticCap.style.display = "none";
+       capFlight.style.opacity = "1";
+       capFlight.style.visibility = "visible";
+       bottle.classList.add("bottle-fade");
+       capFlight.style.width = "142px";
+       capFlight.style.height = "142px";
+       capFlight.style.left = "50%";
+       capFlight.style.top = (scene.clientHeight / 2 - 71) + "px";
+       capFlight.style.transform = "translate(-50%,0) rotateX(0deg) rotateZ(0deg)";
+       return;
+     }
 
+     let startLever = performance.now();
+     const leverDuration = 280;
+
+     function animateLever(now) {
+       const elapsed = now - startLever;
+       const progress = Math.min(1, elapsed / leverDuration);
+       
+       if (progress > 0.1 && staticCap.style.display !== "none") {
+         staticCap.style.display = "none";
+         capFlight.style.opacity = "1";
+         capFlight.style.visibility = "visible";
+       }
+
+       const tiltX = 76 - (progress * 25); 
+       const liftY = (progress * -25);
+       const rotZ = -2 + (progress * 12);
+
+       capFlight.style.transform = `translate(-50%, ${liftY}px) rotateX(${tiltX}deg) rotateZ(${rotZ}deg)`;
+
+       if (progress < 1) {
+         requestAnimationFrame(animateLever);
+       } else {
+         startFlight();
+       }
+     }
+
+     function startFlight() {
+       let x = 0;
+       let y = 0;
+       let vx = 160 + Math.random() * 30;
+       let vy = -480;
+       let angle = 10;
+       let angularVelocity = 540;
+       let lastTime = performance.now();
+       let bounces = 0;
+       
+       const gravity = 1350;
+       const floorY = scene.clientHeight - 32;
+       const leftBound = 20 - (scene.clientWidth / 2);
+       const rightBound = (scene.clientWidth / 2) - 20;
+       const bounceLoss = [0.42, 0.22, 0.10];
+
+       function physicsFrame(now) {
+         const dt = Math.min((now - lastTime) / 1000, 0.025);
+         lastTime = now;
+
+         vy += gravity * dt;
+         x += vx * dt;
+         y += vy * dt;
+         angle += angularVelocity * dt;
+
+         if (Math.hypot(x, y) > 90) {
+           bottle.classList.add("bottle-fade");
+         }
+
+         if (x < leftBound) { x = leftBound; vx = Math.abs(vx) * 0.5; }
+         if (x > rightBound) { x = rightBound; vx = -Math.abs(vx) * 0.5; }
+
+         const currentPosY = 35 + y;
+         if (currentPosY >= floorY && vy > 0) {
+           y = floorY - 35;
+           vy = -vy * (bounceLoss[bounces] || 0);
+           vx *= 0.65;
+           angularVelocity *= 0.5;
+           bounces++;
+         }
+
+         if (bounces >= 3 || (Math.abs(vy) < 20 && currentPosY >= floorY - 2)) {
+           finishCenterAnimation(x, y, angle);
+           return;
+         }
+
+         const flightProgress = Math.min(1, Math.abs(y) / 180);
+         const currentTilt = 50 - (30 * flightProgress);
+         
+         capFlight.style.transform = `translate(-50%,0) translate3d(${x}px,${y}px,0) rotateX(${currentTilt}deg) rotateZ(${angle}deg)`;
+         requestAnimationFrame(physicsFrame);
+       }
+
+       requestAnimationFrame(physicsFrame);
+     }
+
+     function finishCenterAnimation(startX, startY, startAngle) {
+       const targetX = 0;
+       const targetY = (scene.clientHeight / 2) - 60;
+       const startTime = performance.now();
+       const duration = 650;
+       const finalSize = Math.min(145, scene.clientWidth * 0.38);
+
+       function centerStep(now) {
+         const t = Math.min(1, (now - startTime) / duration);
+         const eased = 1 - Math.pow(1 - t, 3);
+
+         const curX = startX + (targetX - startX) * eased;
+         const curY = startY + (targetY - startY) * eased;
+         const curSize = 70 + (finalSize - 70) * eased;
+         const curAngle = startAngle * (1 - eased);
+
+         capFlight.style.width = curSize + "px";
+         capFlight.style.height = curSize + "px";
+         capFlight.style.left = "50%";
+         capFlight.style.top = (curY - curSize / 2) + "px";
+         capFlight.style.transform = `translate(-50%,0) translate3d(${curX}px, 0, 0) rotateX(0deg) rotateZ(${curAngle}deg)`;
+
+         if (t < 1) {
+           requestAnimationFrame(centerStep);
+         } else {
+           capFlight.style.left = "50%";
+           capFlight.style.top = (scene.clientHeight / 2 - finalSize / 2) + "px";
+           capFlight.style.transform = `translate(-50%,0) rotateX(0deg) rotateZ(0deg)`;
+         }
+       }
+       requestAnimationFrame(centerStep);
+     }
+
+     requestAnimationFrame(animateLever);
+   }
+
+   if (!reducedMotion) {
+     setTimeout(launchCapReal, 1150); 
+   } else {
+     launchCapReal();
+   }
+
+   /* =====================================================
+      CAMBIO DE PANTALLA
+      ===================================================== */
 
    discoverButton.addEventListener("click", () => {
-
-
-
      screen1.classList.add("hidden");
-
      screen2.classList.remove("hidden");
 
-
-
      window.scrollTo({
-
        top: 0,
-
        behavior: reducedMotion ? "auto" : "smooth"
-
      });
 
-
-
      $("nombre").focus({ preventScroll: true });
-
    });
 
-
-
-
-
    /* =====================================================
-
       HORA DE LLEGADA CONDICIONAL
-
       ===================================================== */
-
-
 
    function toggleTime() {
-
-
-
      const attending = yes.checked;
-
-
-
      timeGroup.classList.toggle("hidden", !attending);
 
-
-
      if (attending) {
-
-
-
        timeSelect.setAttribute("required", "required");
-
-
-
      } else {
-
-
-
        timeSelect.removeAttribute("required");
-
        timeSelect.value = "";
-
-
-
      }
-
    }
-
-
 
    yes.addEventListener("change", toggleTime);
-
    no.addEventListener("change", toggleTime);
 
-
-
-
-
    /* =====================================================
-
       VALIDACIÓN
-
       ===================================================== */
-
-
 
    function showError(message) {
-
      statusBox.className = "status error";
-
      statusBox.textContent = message;
-
    }
-
-
 
    function showInfo(message) {
-
      statusBox.className = "status info";
-
      statusBox.textContent = message;
-
    }
-
-
 
    function validateForm() {
-
-
-
      const nombre = $("nombre").value.trim();
-
      const email = $("email").value.trim();
 
-
-
      const asistencia =
-
        document.querySelector(
-
          'input[name="asistencia"]:checked'
-
        )?.value;
 
-
-
      if (!nombre) {
-
        showError("Por favor, introduce tu nombre y apellidos.");
-
        $("nombre").focus();
-
        return false;
-
      }
-
-
 
      if (
-
        email &&
-
-       !/^[^\s@]+@[^\s@]+\\.[^\s@]+$/.test(email)
-
+       !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
      ) {
-
        showError("Comprueba que el correo electrónico sea válido.");
-
        $("email").focus();
-
        return false;
-
      }
-
-
 
      if (!asistencia) {
-
        showError("Por favor, selecciona si podrás asistir.");
-
        yes.focus();
-
        return false;
-
      }
-
-
 
      if (
-
        asistencia === "Sí, allí estaré" &&
-
        !timeSelect.value
-
      ) {
-
        showError("Por favor, selecciona una hora estimada de llegada.");
-
        timeSelect.focus();
-
        return false;
-
      }
 
-
-
      return true;
-
    }
 
-
-
-
-
    /* =====================================================
-
       ENVÍO A GOOGLE APPS SCRIPT
-
       ===================================================== */
 
-
-
    form.addEventListener("submit", async event => {
-
-
-
      event.preventDefault();
 
-
-
      statusBox.className = "status";
-
      statusBox.textContent = "";
-
-
 
      if (!validateForm()) return;
 
-
-
      if (
-
        !APPS_SCRIPT_URL ||
-
-       APPS_SCRIPT_URL === "REEMPLAZAR_CON_TU_URL_DE_APPS_SCRIPT"
-
+       APPS_SCRIPT_URL === "https://script.google.com/macros/s/AKfycbwUboIMGzLtn4CnA-RP8wW3RU1VlELdD57skhzSyARP0BpDSlVxpj_NJe7NkNhA_vxkdw/exec"
      ) {
-
        showError(
-
          "La invitación todavía no está conectada al formulario de confirmación. Configura la URL de Google Apps Script."
-
        );
-
        return;
-
      }
 
-
-
      submitButton.disabled = true;
-
      submitButton.textContent = "Enviando respuesta...";
-
-
 
      showInfo("Procesando tu respuesta, por favor espera...");
 
-
-
      const asistencia =
-
        document.querySelector(
-
          'input[name="asistencia"]:checked'
-
        ).value;
 
-
-
      const data = {
-
        nombre: $("nombre").value.trim(),
-
        email: $("email").value.trim(),
-
        asistencia: asistencia,
 
-
-
        hora_llegada:
-
          asistencia === "Sí, allí estaré"
-
            ? timeSelect.value
-
            : "",
 
-
-
        alergias: $("alergias").value.trim(),
-
        mensaje: $("mensaje").value.trim()
-
      };
 
-
-
      try {
-
-
-
        const response = await fetch(APPS_SCRIPT_URL, {
-
          method: "POST",
-
          headers: {
-
            "Content-Type": "text/plain;charset=utf-8"
-
          },
-
          body: JSON.stringify(data)
-
        });
 
-
-
        if (!response.ok) {
-
          throw new Error(
-
            "Error de conexión (" + response.status + ")."
-
          );
-
        }
-
-
 
        const result = await response.json();
 
-
-
        if (result.status === "success") {
-
-
-
          formCard.classList.add("hidden");
-
          successCard.classList.remove("hidden");
 
-
-
          successCard.scrollIntoView({
-
            behavior: reducedMotion ? "auto" : "smooth",
-
            block: "center"
-
          });
-
-
-
        } else {
-
-
-
          throw new Error(
-
            result.message || "No se pudo guardar la respuesta."
-
          );
-
-
-
        }
-
-
-
      } catch (error) {
-
-
-
        console.error("Error al enviar el formulario:", error);
 
-
-
        showError(
-
          "No se ha podido enviar la respuesta. Comprueba tu conexión e inténtalo de nuevo."
-
        );
 
-
-
        submitButton.disabled = false;
-
        submitButton.textContent = "Enviar confirmación";
-
      }
-
-
-
    });
 
-
-
 });
-
 </script>
 
-
-
 </body>
-
 </html>

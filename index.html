@@ -1470,15 +1470,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
      if (!validateForm()) return;
 
-     if (
-       !APPS_SCRIPT_URL ||
-       APPS_SCRIPT_URL === "https://script.google.com/macros/s/AKfycbwUboIMGzLtn4CnA-RP8wW3RU1VlELdD57skhzSyARP0BpDSlVxpj_NJe7NkNhA_vxkdw/exec"
-     ) {
-       showError(
-         "La invitación todavía no está conectada al formulario de confirmación. Configura la URL de Google Apps Script."
-       );
-       return;
-     }
+     if (!APPS_SCRIPT_URL) {
+     showError(
+       "La invitación todavía no está conectada al formulario de confirmación."
+      );
+     return;
+   }
 
      submitButton.disabled = true;
      submitButton.textContent = "Enviando respuesta...";
